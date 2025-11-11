@@ -4,14 +4,19 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.elnfach.crawl_realms.ui.theme.CrawlRealmsTheme
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.elnfach.auth.screen.LoginScreen
+import com.elnfach.home.screen.HomeScreen
+import com.elnfach.realms.screen.RealmScreen
+import com.elnfach.ui.theme.CrawlRealmsTheme
+import com.elnfach.ui.Screen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,11 +24,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CrawlRealmsTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Scaffold { it ->
+                    val navController = rememberNavController()
+                    AppNavHost(navController, Modifier.padding(it))
                 }
             }
         }
@@ -31,17 +34,23 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
+fun AppNavHost(
+    navController: NavHostController,
+    modifier: Modifier,
+) {
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Home.route,
         modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CrawlRealmsTheme {
-        Greeting("Android")
+    ) {
+        composable(Screen.Home.route) {
+            HomeScreen(navController)
+        }
+        composable(Screen.Login.route) {
+            LoginScreen(navController)
+        }
+        composable(Screen.Realms.route) {
+            RealmScreen()
+        }
     }
 }
