@@ -1,0 +1,262 @@
+{
+  "PERSONALITY": {
+    "kind": {
+      "name": "Добрый",
+      "opposite": "evil",
+      "description": "Склонен помогать другим и проявлять заботу"
+    },
+    "evil": {
+      "name": "Злой",
+      "opposite": "kind",
+      "description": "Склонен причинять вред и игнорировать страдания других"
+    },
+    "compassionate": {
+      "name": "Сострадательный",
+      "opposite": "indifferent",
+      "description": "Сопереживает чужим страданиям и стремится помочь"
+    },
+    "indifferent": {
+      "name": "Безразличный",
+      "opposite": "compassionate",
+      "description": "Не проявляет интереса к проблемам и чувствам других"
+    },
+    "loyal": {
+      "name": "Верный",
+      "opposite": "treacherous",
+      "description": "Предан своим обязательствам и союзникам"
+    },
+    "treacherous": {
+      "name": "Предательский",
+      "opposite": "loyal",
+      "description": "Склонен нарушать обещания и предавать доверие"
+    },
+    "generous": {
+      "name": "Щедрый",
+      "opposite": "greedy",
+      "description": "Охотно делится ресурсами и помогает нуждающимся"
+    },
+    "greedy": {
+      "name": "Жадный",
+      "opposite": "generous",
+      "description": "Ставит материальные блага выше помощи другим"
+    },
+    "modest": {
+      "name": "Скромный",
+      "opposite": "arrogant",
+      "description": "Не выставляет напоказ свои достижения и достоинства"
+    },
+    "arrogant": {
+      "name": "Высокомерный",
+      "opposite": "modest",
+      "description": "Преувеличивает свою значимость и презирает других"
+    }
+  },
+  "SOCIAL": {
+    "sociable": {
+      "name": "Общительный",
+      "opposite": "withdrawn",
+      "description": "Легко заводит новые знакомства и наслаждается компанией"
+    },
+    "withdrawn": {
+      "name": "Замкнутый",
+      "opposite": "sociable",
+      "description": "Предпочитает одиночество и избегает социальных контактов"
+    },
+    "charismatic": {
+      "name": "Харизматичный",
+      "opposite": "awkward",
+      "description": "Притягивает людей и легко влияет на их мнение"
+    },
+    "awkward": {
+      "name": "Неуклюжий",
+      "opposite": "charismatic",
+      "description": "Испытывает трудности в социальных взаимодействиях"
+    },
+    "diplomatic": {
+      "name": "Дипломатичный",
+      "opposite": "straightforward",
+      "description": "Умеет находить компромиссы и избегать конфликтов"
+    },
+    "straightforward": {
+      "name": "Прямолинейный",
+      "opposite": "diplomatic",
+      "description": "Говорит прямо то, что думает, не заботясь о такте"
+    },
+    "friendly": {
+      "name": "Дружелюбный",
+      "opposite": "hostile",
+      "description": "Открыт к общению и проявляет доброжелательность"
+    },
+    "hostile": {
+      "name": "Враждебный",
+      "opposite": "friendly",
+      "description": "Настроен агрессивно и недоверчиво к окружающим"
+    },
+    "tactful": {
+      "name": "Тактичный",
+      "opposite": "tactless",
+      "description": "Чуток к чувствам других и выбирает уместные слова"
+    },
+    "tactless": {
+      "name": "Бестактный",
+      "opposite": "tactful",
+      "description": "Груб и невнимателен к чувствам окружающих"
+    }
+  },
+  "EMOTIONAL": {
+    "calm": {
+      "name": "Спокойный",
+      "opposite": "hot_tempered",
+      "description": "Сохраняет самообладание в стрессовых ситуациях"
+    },
+    "hot_tempered": {
+      "name": "Вспыльчивый",
+      "opposite": "calm",
+      "description": "Быстро теряет самообладание и поддается гневу"
+    },
+    "optimistic": {
+      "name": "Оптимистичный",
+      "opposite": "pessimistic",
+      "description": "Видит положительные стороны даже в трудностях"
+    },
+    "pessimistic": {
+      "name": "Пессимистичный",
+      "opposite": "optimistic",
+      "description": "Склонен ожидать худшего исхода событий"
+    },
+    "sentimental": {
+      "name": "Сентиментальный",
+      "opposite": "impassive",
+      "description": "Эмоционально привязан к воспоминаниям и традициям"
+    },
+    "impassive": {
+      "name": "Беспристрастный",
+      "opposite": "sentimental",
+      "description": "Сохраняет эмоциональную нейтральность и объективность"
+    },
+    "balanced": {
+      "name": "Уравновешенный",
+      "opposite": "impulsive",
+      "description": "Обдумывает решения прежде чем действовать"
+    },
+    "impulsive": {
+      "name": "Импульсивный",
+      "opposite": "balanced",
+      "description": "Действует под влиянием сиюминутных эмоций"
+    },
+    "cheerful": {
+      "name": "Жизнерадостный",
+      "opposite": "gloomy",
+      "description": "Испытывает и передает окружающим положительные эмоции"
+    },
+    "gloomy": {
+      "name": "Унылый",
+      "opposite": "cheerful",
+      "description": "Преобладает мрачное и подавленное настроение"
+    }
+  },
+  "INTELLECTUAL": {
+    "smart": {
+      "name": "Умный",
+      "opposite": "stupid",
+      "description": "Быстро обучается и эффективно решает проблемы"
+    },
+    "stupid": {
+      "name": "Глупый",
+      "opposite": "smart",
+      "description": "Испытывает трудности с обучением и решением задач"
+    },
+    "curious": {
+      "name": "Любознательный",
+      "opposite": "indifferent_intellectual",
+      "description": "Проявляет активный интерес к новым знаниям"
+    },
+    "indifferent_intellectual": {
+      "name": "Равнодушный",
+      "opposite": "curious",
+      "description": "Не интересуется получением новых знаний"
+    },
+    "creative": {
+      "name": "Креативный",
+      "opposite": "stereotypical",
+      "description": "Способен к нестандартному мышлению и инновациям"
+    },
+    "stereotypical": {
+      "name": "Шаблонный",
+      "opposite": "creative",
+      "description": "Действует по установленным схемам без импровизации"
+    },
+    "analytical": {
+      "name": "Аналитический",
+      "opposite": "superficial",
+      "description": "Склонен к глубокому анализу и системному мышлению"
+    },
+    "superficial": {
+      "name": "Поверхностный",
+      "opposite": "analytical",
+      "description": "Рассматривает проблемы без глубинного анализа"
+    },
+    "wise": {
+      "name": "Мудрый",
+      "opposite": "immature",
+      "description": "Обладает глубоким пониманием жизни и людей"
+    },
+    "immature": {
+      "name": "Незрелый",
+      "opposite": "wise",
+      "description": "Не обладает жизненным опытом и глубиной суждений"
+    }
+  },
+  "MORAL": {
+    "honest": {
+      "name": "Честный",
+      "opposite": "deceitful",
+      "description": "Придерживается правды в словах и поступках"
+    },
+    "deceitful": {
+      "name": "Лживый",
+      "opposite": "honest",
+      "description": "Склонен к обману и манипуляции информацией"
+    },
+    "fair": {
+      "name": "Справедливый",
+      "opposite": "unfair",
+      "description": "Стремится к объективности и равноправию"
+    },
+    "unfair": {
+      "name": "Несправедливый",
+      "opposite": "fair",
+      "description": "Проявляет предвзятость и неравное отношение"
+    },
+    "altruistic": {
+      "name": "Альтруистичный",
+      "opposite": "selfish",
+      "description": "Ставит интересы других выше собственных"
+    },
+    "selfish": {
+      "name": "Эгоистичный",
+      "opposite": "altruistic",
+      "description": "Заботится в первую очередь о собственной выгоде"
+    },
+    "principled": {
+      "name": "Принципиальный",
+      "opposite": "unprincipled",
+      "description": "Твердо следует своим моральным убеждениям"
+    },
+    "unprincipled": {
+      "name": "Беспринципный",
+      "opposite": "principled",
+      "description": "Легко отступает от моральных норм ради выгоды"
+    },
+    "responsible": {
+      "name": "Ответственный",
+      "opposite": "irresponsible",
+      "description": "Добросовестно выполняет взятые обязательства"
+    },
+    "irresponsible": {
+      "name": "Безответственный",
+      "opposite": "responsible",
+      "description": "Пренебрегает своими обязанностями и обещаниями"
+    }
+  }
+}

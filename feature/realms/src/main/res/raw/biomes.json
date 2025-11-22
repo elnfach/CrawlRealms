@@ -1,0 +1,1374 @@
+[
+  {
+    "id": "deep_taiga",
+    "name": ["Глухая тайга"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "CONIFEROUS",
+      "name": "Хвойные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "pine_forest",
+    "name": ["Сосновый бор"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "CONIFEROUS",
+      "name": "Хвойные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "COAST"],
+      "humidity": ["DRY"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "cedar_forest",
+    "name": ["Кедровый лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "CONIFEROUS",
+      "name": "Хвойные"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["MOIST"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "mirkwood_forest",
+    "name": ["Чернолесье", "Дубовая Роща"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "LEAFY",
+      "name": "Лиственные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "birch_forest",
+    "name": ["Березовый лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "LEAFY",
+      "name": "Лиственные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "beech_forest",
+    "name": ["Буковый Лес"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "LEAFY",
+      "name": "Лиственные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "swamp_forest",
+    "name": ["Ольховый Криволес", "Топи"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "LEAFY",
+      "name": "Лиственные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "COAST"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "aspen_forest",
+    "name": ["Осиновый лес", "Дрожащий Лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "LEAFY",
+      "name": "Лиственные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE", "COLD"]
+    }
+  },
+  {
+    "id": "mixed_forest",
+    "name": ["Смешанный лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "linden_forest",
+    "name": ["Липовый лес"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "urema",
+    "name": ["Пойменный Ивняк", "Урема"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "mountain_forest",
+    "name": ["Горный Лес"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "edge_forest",
+    "name": ["Лесо-Степь", "Опушечный лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "coastal_pine_forest",
+    "name": ["Прибрежный Сосняк"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["DRY"],
+      "temperature": ["WARM"]
+    }
+  },
+  {
+    "id": "juniper_woodlands",
+    "name": ["Можжевеловое Редколесье"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "swampy_spruce_forest",
+    "name": ["Заболоченный Ельник"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["WET"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "floodplain_poplar_forest",
+    "name": ["Пойменный Тополевый Лес"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "MIXED",
+      "name": "Смешанные"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["WARM"]
+    }
+  },
+  {
+    "id": "temperate_plains",
+    "name": ["Степь", "Ковыльная равнина"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "plains",
+      "name": "Равнины"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "arid_steppe",
+    "name": ["Сухая степь", "Полупустыня"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "plains",
+      "name": "Равнины"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "floodplain_meadow",
+    "name": ["Пойменный луг", "Затопляемая равнина"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "plains",
+      "name": "Равнины"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "PLAINS", "FOREST"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "cold_plain",
+    "name": ["Холодная равнина", "Тундровая степь"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "plains",
+      "name": "Равнины"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["COLD", "FREEZING"]
+    }
+  },
+  {
+    "id": "alpine_meadow",
+    "name": ["Альпийский луг", "Горный луг"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "meadows",
+      "name": "Луга"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["MOIST"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "water_meadow",
+    "name": ["Влажный луг", "Заболоченный луг"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "meadows",
+      "name": "Луга"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "PLAINS", "FOREST"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "dry_meadow",
+    "name": ["Сухой луг", "Разнотравная степь"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "meadows",
+      "name": "Луга"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "rolling_hills",
+    "name": ["Волнистые холмы", "Пологие холмы"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "hills",
+      "name": "Холмы"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "badlands",
+    "name": ["Бэдлендс", "Сухие холмы"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "hills",
+      "name": "Холмы"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "chalk_hills",
+    "name": ["Меловые холмы", "Известняковые холмы"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "hills",
+      "name": "Холмы"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "marsh",
+    "name": ["Марши", "Травяное болото"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "wetlands",
+      "name": "Болота"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "PLAINS", "FOREST"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "bog",
+    "name": ["Торфяное болото", "Моховое болото"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "wetlands",
+      "name": "Болота"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "fen",
+    "name": ["Низинное болото", "Тростниковое болото"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "wetlands",
+      "name": "Болота"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "PLAINS", "FOREST"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "heath",
+    "name": ["Вересковая пустошь", "Верещатник"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "heathlands",
+      "name": "Пустоши"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY"],
+      "temperature": ["TEMPERATE", "COLD"]
+    }
+  },
+  {
+    "id": "coastal_cliffs",
+    "name": ["Прибрежные утесы", "Морские скалы"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "coastal",
+      "name": "Прибрежные зоны"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "sand_dunes",
+    "name": ["Песчаные дюны", "Прибрежные пески"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "coastal",
+      "name": "Прибрежные зоны"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "alpine_tundra",
+    "name": ["Альпийская тундра", "Высокогорная тундра"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["COLD", "FREEZING"]
+    }
+  },
+  {
+    "id": "mountain_meadow",
+    "name": ["Горные луга", "Субальпийские луга"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "mountain_taiga",
+    "name": ["Горная тайга", "Хвойные склоны"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountain_forests",
+      "name": "Горные леса"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["MOIST"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "montane_forest",
+    "name": ["Горный лес", "Лесистые склоны"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountain_forests",
+      "name": "Горные леса"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "mountain_valley",
+    "name": ["Горная долина", "Межгорная котловина"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "mountain_valleys",
+      "name": "Горные долины"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "high_desert",
+    "name": ["Высокогорная пустыня", "Холодная пустыня"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "volcanic_slopes",
+    "name": ["Вулканические склоны", "Базальтовые поля"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "glacial_valley",
+    "name": ["Ледниковая долина", "Троговая долина"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "glacial",
+      "name": "Ледниковые зоны"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["FREEZING"]
+    }
+  },
+  {
+    "id": "permanent_snow",
+    "name": ["Вечные снега", "Снежники"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "glacial",
+      "name": "Ледниковые зоны"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["FREEZING", "COLD"]
+    }
+  },
+  {
+    "id": "scree_slope",
+    "name": ["Осыпные склоны", "Курумники"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "steep_slopes",
+      "name": "Крутые склоны"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "cliff_face",
+    "name": ["Скальные обрывы", "Утесы"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "steep_slopes",
+      "name": "Крутые склоны"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "foothills",
+    "name": ["Предгорья", "Подножие гор"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "foothills",
+      "name": "Предгорья"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "mountain_pass",
+    "name": ["Горный перевал", "Седловина"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "rocky_peaks",
+    "name": ["Скалистые пики", "Каменные вершины"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "mountains",
+      "name": "Горы"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "sandy_beach",
+    "name": ["Песчаный пляж", "Пляж"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "coastal",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["TEMPERATE", "WARM", "HOT"]
+    }
+  },
+  {
+    "id": "rocky_shore",
+    "name": ["Скалистый берег", "Каменистый берег"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "coastal",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "coastal_cliffs",
+    "name": ["Прибрежные утесы", "Морские скалы"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "coastal",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "coastal_dunes",
+    "name": ["Прибрежные дюны", "Песчаные дюны"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "coastal",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "coastal_lagoon",
+    "name": ["Прибрежная лагуна", "Лиман"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "lagoons",
+      "name": "Лагуны"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "river_estuary",
+    "name": ["Устье реки", "Эстуарий"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "lagoons",
+      "name": "Лагуны"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "sheltered_bay",
+    "name": ["Защищенная бухта", "Залив"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "bays",
+      "name": "Заливы"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "rocky_cove",
+    "name": ["Скалистая бухта", "Ковш"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "bays",
+      "name": "Заливы"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "open_sea",
+    "name": ["Открытое море", "Глубокие воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "open_water",
+      "name": "Открытые воды"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["ARID", "DRY", "MOIST", "WET"],
+      "temperature": ["FREEZING", "COLD", "TEMPERATE", "WARM", "HOT"]
+    }
+  },
+  {
+    "id": "coastal_waters",
+    "name": ["Прибрежные воды", "Мелководье"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "open_water",
+      "name": "Открытые воды"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "freshwater_lake",
+    "name": ["Пресное озеро", "Озеро"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "lakes",
+      "name": "Озера"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "mountain_lake",
+    "name": ["Горное озеро", "Ледниковое озеро"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "lakes",
+      "name": "Озера"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "FREEZING"]
+    }
+  },
+  {
+    "id": "major_river",
+    "name": ["Большая река", "Река"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "rivers",
+      "name": "Реки"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "stream",
+    "name": ["Ручей", "Поток"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "rivers",
+      "name": "Реки"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "hot_springs",
+    "name": ["Горячие источники", "Термальные воды"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "special_water",
+      "name": "Особые водные зоны"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["HOT"]
+    }
+  },
+  {
+    "id": "frozen_waters",
+    "name": ["Ледяные воды", "Замерзший водоем"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "special_water",
+      "name": "Особые водные зоны"
+    },
+    "conditions": {
+      "altitude": ["OCEAN", "COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["FREEZING"]
+    }
+  },
+  {
+    "id": "tropical_rainforest",
+    "name": ["Тропический лес", "Джунгли"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "TROPICAL",
+      "name": "Тропические"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "monsoon_forest",
+    "name": ["Муссонный лес", "Листопадный тропический лес"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "TROPICAL",
+      "name": "Тропические"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST", "DRY"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "mangrove_swamp",
+    "name": ["Мангровые заросли", "Мангровое болото"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "TROPICAL",
+      "name": "Тропические"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "tropical_savanna",
+    "name": ["Саванна", "Тропическая степь"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "TROPICAL",
+      "name": "Тропические"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY", "ARID"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "sand_desert",
+    "name": ["Песчаная пустыня", "Дюны"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "DESERT",
+      "name": "Пустыни"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["ARID"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "rock_desert",
+    "name": ["Каменная пустыня", "Гаммада"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "DESERT",
+      "name": "Пустыни"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["ARID"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "salt_flats",
+    "name": ["Солончаки", "Соляная пустыня"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "DESERT",
+      "name": "Пустыни"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["ARID"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "oasis",
+    "name": ["Оазис", "Пустынный оазис"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "DESERT",
+      "name": "Пустыни"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["HOT", "WARM"]
+    }
+  },
+  {
+    "id": "arctic_tundra",
+    "name": ["Арктическая тундра", "Полярная тундра"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "POLAR",
+      "name": "Полярные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["DRY", "MOIST"],
+      "temperature": ["FREEZING", "COLD"]
+    }
+  },
+  {
+    "id": "ice_desert",
+    "name": ["Ледяная пустыня", "Арктическая пустыня"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "POLAR",
+      "name": "Полярные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["FREEZING"]
+    }
+  },
+  {
+    "id": "permafrost",
+    "name": ["Вечная мерзлота", "Мерзлотная тундра"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "POLAR",
+      "name": "Полярные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS"],
+      "humidity": ["MOIST", "WET"],
+      "temperature": ["FREEZING"]
+    }
+  },
+  {
+    "id": "canyon",
+    "name": ["Каньон", "Ущелье"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "UNIQUE",
+      "name": "Уникальные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "mesa",
+    "name": ["Меса", "Столовая гора"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "UNIQUE",
+      "name": "Уникальные"
+    },
+    "conditions": {
+      "altitude": ["MOUNTAIN", "SNOW_PEAKS"],
+      "humidity": ["ARID", "DRY"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "thermal_springs",
+    "name": ["Термальные источники", "Гейзеры"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "UNIQUE",
+      "name": "Уникальные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["HOT"]
+    }
+  },
+  {
+    "id": "karst_landscape",
+    "name": ["Карстовый ландшафт", "Пещерные поля"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "UNIQUE",
+      "name": "Уникальные"
+    },
+    "conditions": {
+      "altitude": ["PLAINS", "FOREST", "HILLS", "MOUNTAIN"],
+      "humidity": ["MOIST"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "tidal_flats",
+    "name": ["Приливные равнины", "Ватты"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "COASTAL",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "sea_cliffs",
+    "name": ["Морские утесы", "Прибрежные скалы"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "COASTAL",
+      "name": "Побережья"
+    },
+    "conditions": {
+      "altitude": ["COAST", "BEACH"],
+      "humidity": ["WET", "MOIST"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "tropical_ocean",
+    "name": ["Тропический океан", "Теплые воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "open_ocean",
+      "name": "Открытый океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "temperate_ocean",
+    "name": ["Умеренный океан", "Прохладные воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "open_ocean",
+      "name": "Открытый океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "subpolar_ocean",
+    "name": ["Субполярный океан", "Холодные воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "open_ocean",
+      "name": "Открытый океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "arctic_ocean",
+    "name": ["Арктический океан", "Ледяные воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "open_ocean",
+      "name": "Открытый океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["FREEZING"]
+    }
+  },
+  {
+    "id": "deep_trench",
+    "name": ["Глубоководный желоб", "Абиссальная равнина"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "deep_ocean",
+      "name": "Глубокий океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "FREEZING"]
+    }
+  },
+  {
+    "id": "oceanic_plateau",
+    "name": ["Океаническое плато", "Подводное плато"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "deep_ocean",
+      "name": "Глубокий океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "deep_current",
+    "name": ["Глубинное течение", "Абиссальный поток"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "deep_ocean",
+      "name": "Глубокий океан"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "coral_sea",
+    "name": ["Коралловое море", "Рифовые воды"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "biological_zones",
+      "name": "Биологические зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "kelp_forest_water",
+    "name": ["Лес ламинарии", "Водорослевые заросли"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "biological_zones",
+      "name": "Биологические зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "sargasso_sea",
+    "name": ["Саргассово море", "Плавающие водоросли"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "biological_zones",
+      "name": "Биологические зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "phytoplankton_bloom",
+    "name": ["Цветение фитопланктона", "Планктонные поля"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "biological_zones",
+      "name": "Биологические зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE", "WARM"]
+    }
+  },
+  {
+    "id": "deep_thermal_vents",
+    "name": ["Гидротермальные источники", "Черные курильщики"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "unique_marine",
+      "name": "Уникальные морские зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["HOT"]
+    }
+  },
+  {
+    "id": "cold_seep",
+    "name": ["Холодные просачивания", "Метановые сипы"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "unique_marine",
+      "name": "Уникальные морские зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD"]
+    }
+  },
+  {
+    "id": "underwater_caves",
+    "name": ["Подводные пещеры", "Карстовые полости"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "unique_marine",
+      "name": "Уникальные морские зоны"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["TEMPERATE"]
+    }
+  },
+  {
+    "id": "abyssal_plain",
+    "name": ["Абиссальная равнина", "Глубоководная равнина"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "seafloor",
+      "name": "Морское дно"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "FREEZING"]
+    }
+  },
+  {
+    "id": "seamount",
+    "name": ["Подводная гора", "Гайот"],
+    "type": "SECONDARY",
+    "family": {
+      "type": "seafloor",
+      "name": "Морское дно"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["COLD", "TEMPERATE"]
+    }
+  },
+  {
+    "id": "oceanic_ridge",
+    "name": ["Срединно-океанический хребет", "Подводный хребет"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "seafloor",
+      "name": "Морское дно"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN", "OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["WARM", "HOT"]
+    }
+  },
+  {
+    "id": "hadal_zone",
+    "name": ["Хадальная зона", "Ультраабиссаль"],
+    "type": "PRIMARY",
+    "family": {
+      "type": "deepest_ocean",
+      "name": "Глубочайшие воды"
+    },
+    "conditions": {
+      "altitude": ["DEEP_OCEAN"],
+      "humidity": ["WET"],
+      "temperature": ["FREEZING"]
+    }
+  }
+]

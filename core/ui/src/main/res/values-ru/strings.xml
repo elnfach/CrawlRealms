@@ -3,4 +3,23 @@
     <string name="username">Имя пользователя</string>
     <string name="password">Пароль</string>
     <string name="login">Войти</string>
+
+
+    <!--Traits -->
+    <string name="kind_personality">Добрый</string>
+    <string name="evil_personality">Злой</string>
+
+    <string name="neutral_personality">Нейтральный</string>
+    <string name="merciful_personality">Сострадательный</string>
+
+    <string name="loyal_personality">Верный</string>
+    <string name="treacherous_personality">Предательский</string>
+
+    <string name="generous_personality">Щедрый</string>
+    <string name="stingy_personality">Жадный</string>
+
+    <string name="humble_personality">Скромный</string>
+    <string name="proud_personality">Высокомерный</string>
+
+    <string name="egoistic_personality">Эгоистичный</string>
 </resources>

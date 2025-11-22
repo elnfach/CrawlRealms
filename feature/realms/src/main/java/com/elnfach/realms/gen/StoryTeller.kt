@@ -4,7 +4,13 @@ class StoryTeller {
 
     private val markovStoryGen = MarkovStoryGen()
 
+
+
     init {
+
+    }
+
+    fun next(choice: Int) {
 
     }
 

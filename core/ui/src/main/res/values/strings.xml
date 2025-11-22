@@ -4,4 +4,22 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+
+    <!--Traits -->
+    <string name="kind_personality">Kind</string>
+    <string name="evil_personality">Evil</string>
+
+    <string name="neutral_personality">Neutral</string>
+    <string name="merciful_personality">Merciful</string>
+
+    <string name="loyal_personality">Loyal</string>
+    <string name="treacherous_personality">Treacherous</string>
+
+    <string name="generous_personality">Generous</string>
+    <string name="stingy_personality">Stingy</string>
+
+    <string name="humble_personality">Humble</string>
+    <string name="proud_personality">Proud</string>
+
+    <string name="egoistic_personality">Egoistic</string>
 </resources>

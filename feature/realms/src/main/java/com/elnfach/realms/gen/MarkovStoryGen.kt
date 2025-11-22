@@ -66,7 +66,7 @@ class MarkovStoryGen {
         )
     )
 
-    private val elements = mapOf(
+    /*private val elements = mapOf(
         TransitionElement.Location to listOf(R.string.deep_forest)
-    )
+    )*/
 }

@@ -19,7 +19,7 @@ fun HomeScreen(
     homeViewModel: HomeViewModel = viewModel()
 ) {
     LaunchedEffect(Unit) {
-        if(false) {
+        if(true) {
             navController.navigate(Screen.Realms.route) {
                 popUpTo(0) {
                     inclusive = true

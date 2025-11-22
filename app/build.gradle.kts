@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -44,10 +45,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":core:ui"))
     implementation(project(":feature:home"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:realms"))
+
+    implementation(libs.koin.android)
 
     implementation(libs.androidx.activity.compose)
 
