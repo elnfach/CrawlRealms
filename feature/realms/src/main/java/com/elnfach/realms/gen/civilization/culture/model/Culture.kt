@@ -1,7 +1,7 @@
-package com.elnfach.realms.model
+package com.elnfach.realms.gen.civilization.culture.model
 
 data class Culture(
-    val type: String,
+    val type: Type,
     val economy: String,
     val way: String,
     val values: String,
@@ -9,4 +9,8 @@ data class Culture(
     val architecture: String,
 ) {
 
+}
+
+enum class Type {
+    NORDEST
 }

@@ -1,7 +1,7 @@
 package com.elnfach.realms.gen.characters
 
-import com.elnfach.realms.model.Character
-import com.elnfach.realms.model.Character.TraitType
+import com.elnfach.realms.gen.characters.model.Character
+import com.elnfach.realms.gen.characters.model.Character.TraitType
 
 fun <T> List<Pair<T, Int>>.weightedRandom(): T {
     val totalWeight = this.sumOf { it.second }

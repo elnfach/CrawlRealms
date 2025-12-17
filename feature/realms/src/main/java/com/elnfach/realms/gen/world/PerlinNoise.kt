@@ -53,7 +53,8 @@ class PerlinNoise(seed: Long = 0) {
         val x1 = lerp(u, grad(aa, xf, yf), grad(ba, xf - 1, yf))
         val x2 = lerp(u, grad(ab, xf, yf - 1), grad(bb, xf - 1, yf - 1))
 
-        return lerp(v, x1, x2)
+        val result = lerp(v, x1, x2)
+        return result.coerceIn(-1.0, 1.0)
     }
 
     fun fractalNoise(x: Double, y: Double, octaves: Int = 4, persistence: Double = 0.5): Double {

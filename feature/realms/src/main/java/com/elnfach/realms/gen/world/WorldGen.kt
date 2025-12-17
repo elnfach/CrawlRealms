@@ -4,6 +4,7 @@ import android.util.Log
 import com.elnfach.realms.content.Biome
 import com.elnfach.realms.content.Humidity
 import com.elnfach.realms.content.Temperature
+import com.elnfach.realms.gen.world.location.Location
 import com.elnfach.realms.gen.world.noice.ClimateNoiseGen
 import com.elnfach.realms.gen.world.noice.HeightNoiseGen
 
@@ -14,12 +15,6 @@ class WorldGen(
     private val heightNoice = HeightNoiseGen(seed + 1)
     private val climateNoice = ClimateNoiseGen(seed + 2)
     private val biomeLookupTable = BiomeGen(biomes)
-
-    data class Location(
-        val x: Int,
-        val y: Int,
-        val biome: Biome,
-    )
 
     fun gen(width: Int, height: Int): Array<Array<Location>> {
         val hmap = heightNoice.gen(width, height)

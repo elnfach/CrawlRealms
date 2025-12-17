@@ -39,7 +39,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.elnfach.realms.content.Altitude
 import com.elnfach.realms.content.Biome
+import com.elnfach.realms.content.Humidity
+import com.elnfach.realms.content.Temperature
 import com.elnfach.realms.gen.world.WorldGen
+import com.elnfach.realms.gen.world.location.Location
 import com.elnfach.realms.viewmodel.RealmViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -57,11 +60,15 @@ fun RealmContent(biomes: List<Biome>?) {
     val worldGen = biomes?.let { WorldGen(biomes = it) }
 
     // Состояние для хранения сгенерированного мира
-    var worldMap by remember { mutableStateOf<Array<Array<WorldGen.Location>>?>(null) }
+    var worldMap by remember { mutableStateOf<Array<Array<Location>>?>(null) }
     var isLoading by remember { mutableStateOf(false) }
 
-    var worldWidth by remember { mutableIntStateOf(250) }
-    var worldHeight by remember { mutableIntStateOf(250) }
+    var worldWidth by remember { mutableIntStateOf(500) }
+    var worldHeight by remember { mutableIntStateOf(500) }
+
+    var altitude by remember { mutableStateOf(false) }
+    var toggle by remember { mutableStateOf(false) }
+    var humidity by remember { mutableStateOf(false) }
 
     val scope = rememberCoroutineScope()
 
@@ -78,71 +85,93 @@ fun RealmContent(biomes: List<Biome>?) {
         )
 
         // Кнопка генерации
-        Row(
-            modifier = Modifier
-                .horizontalScroll(rememberScrollState())
-                .fillMaxWidth() // Занимаем всю ширину
-        ) {
-            Button(
-                onClick = {
-                    if (worldGen != null) {
-                        isLoading = true
-                        // Генерация в фоновом потоке
-                        scope.launch(Dispatchers.Default) {
-                            val generatedMap = worldGen.gen(worldWidth, worldHeight)
-                            withContext(Dispatchers.Main) {
-                                worldMap = generatedMap
-                                isLoading = false
+        Column {
+            Row(
+                modifier = Modifier
+                    .horizontalScroll(rememberScrollState())
+                    .fillMaxWidth() // Занимаем всю ширину
+            ) {
+                Button(
+                    onClick = {
+                        if (worldGen != null) {
+                            isLoading = true
+                            // Генерация в фоновом потоке
+                            scope.launch(Dispatchers.Default) {
+                                val generatedMap = worldGen.gen(worldWidth, worldHeight)
+                                withContext(Dispatchers.Main) {
+                                    worldMap = generatedMap
+                                    isLoading = false
+                                }
                             }
                         }
+                    },
+                    enabled = worldGen != null && !isLoading,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                ) {
+                    if (isLoading) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(16.dp),
+                            strokeWidth = 2.dp
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Генерация...")
+                    } else {
+                        Text("Сгенерировать мир")
                     }
-                },
-                enabled = worldGen != null && !isLoading,
-                modifier = Modifier.padding(bottom = 16.dp)
-            ) {
-                if (isLoading) {
-                    CircularProgressIndicator(
-                        modifier = Modifier.size(16.dp),
-                        strokeWidth = 2.dp
-                    )
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text("Генерация...")
-                } else {
-                    Text("Сгенерировать мир")
                 }
-            }
 
-            Button(
-                onClick = {
-                    worldWidth = 25
-                    worldHeight = 25
+                Button(
+                    onClick = {
+                        worldWidth = 25
+                        worldHeight = 25
+                    }
+                ) {
+                    Text("25x25")
                 }
-            ) {
-                Text("25x25")
+                Button(
+                    onClick = {
+                        worldWidth = 100
+                        worldHeight = 100
+                    }
+                ) {
+                    Text("100х100")
+                }
+                Button(
+                    onClick = {
+                        worldWidth = 250
+                        worldHeight = 250
+                    }
+                ) {
+                    Text("250x250")
+                }
+                Button(
+                    onClick = {
+                        worldWidth = 500
+                        worldHeight = 500
+                    }
+                ) {
+                    Text("500x500")
+                }
             }
-            Button(
-                onClick = {
-                    worldWidth = 100
-                    worldHeight = 100
+            Row(Modifier.fillMaxWidth()) {
+                Button(onClick =
+                    {
+                        altitude = !altitude
+                    }) {
+                    Text("Altitude")
                 }
-            ) {
-                Text("100х100")
-            }
-            Button(
-                onClick = {
-                    worldWidth = 250
-                    worldHeight = 250
+                Button(onClick =
+                    {
+                        toggle = !toggle
+                    }) {
+                    Text("Toggle")
                 }
-            ) {
-                Text("250x250")
-            }
-            Button(
-                onClick = {
-                    worldWidth = 500
-                    worldHeight = 500
+                Button(onClick =
+                    {
+                        humidity = !humidity
+                    }) {
+                    Text("Humidity")
                 }
-            ) {
-                Text("500x500")
             }
         }
 
@@ -171,6 +200,9 @@ fun RealmContent(biomes: List<Biome>?) {
             else -> {
                 // Визуализация карты мира
                 WorldMapVisualization(
+                    altitude,
+                    toggle,
+                    humidity,
                     worldMap = worldMap!!,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -184,6 +216,51 @@ fun RealmContent(biomes: List<Biome>?) {
     }
 }
 
+fun getAltitudeColor(biome: Biome): Color {
+    val altitude = biome.conditions.altitude.firstOrNull()
+
+    return when (altitude) {
+        Altitude.DEEP_OCEAN -> Color(0xFF0D47A1)        // Темно-синий для глубокого океана
+        Altitude.OCEAN -> Color(0xFF1976D2)             // Синий для океана
+        Altitude.COAST -> Color.Red           // Голубой для побережья
+        Altitude.BEACH -> Color(0xFFFFD54F)             // Песочный желтый для пляжа
+        Altitude.PLAINS -> Color(0xFF66BB6A)            // Светло-зеленый для равнин
+        Altitude.FOREST -> Color(0xFF2E7D32)            // Темно-зеленый для леса
+        Altitude.HILLS -> Color(0xFF795548)             // Коричневый для холмов
+        Altitude.MOUNTAIN_BASE -> Color(0xFF8D6E63)     // Светло-коричневый для подножия гор
+        Altitude.MOUNTAIN -> Color(0xFF5D4037)          // Темно-коричневый для гор
+        Altitude.SNOW_PEAKS -> Color(0xFFFFFFFF)        // Белый для заснеженных вершин
+        else -> Color(0xFF9E9E9E)                       // Серый по умолчанию
+    }
+}
+
+fun getTemperatureColor(biome: Biome): Color {
+    // Если нужно брать первый элемент из сета температуры
+    val temperature = biome.conditions.temperature.firstOrNull()
+
+    return when (temperature) {
+        Temperature.FREEZING -> Color.Blue  // Голубой для замерзающих
+        Temperature.COLD -> Color(0xFF90CAF9)      // Светло-голубой для холодных
+        Temperature.TEMPERATE -> Color(0xFF4CAF50) // Зеленый для умеренных
+        Temperature.WARM -> Color(0xFFFFA726)      // Оранжевый для теплых
+        Temperature.HOT -> Color(0xFFF44336)       // Красный для горячих
+        else -> Color(0xFF9E9E9E) // Серый по умолчанию
+    }
+}
+
+
+fun getHumidityColor(biome: Biome): Color {
+    // Если нужно брать первый элемент из сета влажности
+    val humidity = biome.conditions.humidity.firstOrNull()
+
+    return when (humidity) {
+        Humidity.ARID -> Color(0xFFFFA726) // Оранжевый для засушливых
+        Humidity.DRY -> Color(0xFFFFCA28)  // Желто-оранжевый для сухих
+        Humidity.MOIST -> Color(0xFF4CAF50) // Зеленый для влажных
+        Humidity.WET -> Color(0xFF2196F3)  // Синий для мокрых
+        else -> Color(0xFF9E9E9E) // Серый по умолчанию
+    }
+}
 fun getBiomeColor2(biome: Biome): Color {
     return when {
         biome.conditions.altitude.contains(Altitude.DEEP_OCEAN) -> Color(0xFF000080) // Темно-синий
@@ -445,6 +522,9 @@ fun getBiomeColor(biome: Biome): Color {
 }
 @Composable
 fun WorldMapVisualization(
+    altitude: Boolean,
+    toggle: Boolean,
+    humidity: Boolean,
     worldMap: Array<Array<WorldGen.Location>>,
     modifier: Modifier = Modifier
 ) {
@@ -458,7 +538,7 @@ fun WorldMapVisualization(
         for (y in 0 until height) {
             for (x in 0 until width) {
                 val location = worldMap[y][x]
-                val color = getBiomeColor(location.biome)
+                val color = if (!altitude) getAltitudeColor(location.biome) else if (!humidity) if (toggle) getBiomeColor(location.biome) else getTemperatureColor(location.biome) else getHumidityColor(location.biome)
 
                 drawRect(
                     color = color,

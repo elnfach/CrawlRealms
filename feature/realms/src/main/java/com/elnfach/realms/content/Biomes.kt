@@ -44,11 +44,11 @@ enum class Altitude {
     SNOW_PEAKS;
 
     companion object {
-        const val DEEP_OCEAN_MAX = 0.15
-        const val OCEAN_LEVEL = 0.25
-        const val COASTAL_MAX = 0.3
-        const val BEACH_MAX = 0.35
-        const val PLAINS_MAX = 0.5
+        const val DEEP_OCEAN_MAX = -0.7
+        const val OCEAN_LEVEL = 0.0
+        const val COASTAL_MAX = 0.01
+        const val BEACH_MAX = 0.05
+        const val PLAINS_MAX = 0.2
         const val FOREST_MAX = 0.6
         const val HILLS_MAX = 0.7
         const val MOUNTAIN_BASE_MAX = 0.8
@@ -71,10 +71,10 @@ enum class Altitude {
 
 @Serializable
 enum class Humidity {
-    ARID,    // < 0.25    - Пустыни, сухие степи
-    DRY,     // 0.25-0.5  - Саванны, редкие леса
-    MOIST,   // 0.5-0.75  - Леса, луга
-    WET;     // > 0.75    - Болота, джунгли, тундра
+    ARID,    // Пустыни, сухие степи
+    DRY,     // Саванны, редкие леса
+    MOIST,   // Леса, луга
+    WET;     // Болота, джунгли, тундра
 
     companion object {
         const val ARID_LEVEL = 0.25
@@ -99,8 +99,8 @@ enum class Temperature {
     HOT;        // > 0.8    - Пустыни, джунгли
 
     companion object {
-        const val FREEZING_LEVEL = 0.2
-        const val COLD_LEVEL = 0.4
+        const val FREEZING_LEVEL = -0.3
+        const val COLD_LEVEL = 0.0
         const val TEMPERATE_LEVEL = 0.6
         const val WARM_LEVEL = 0.8
 

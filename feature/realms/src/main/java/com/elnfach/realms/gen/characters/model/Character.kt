@@ -1,5 +1,6 @@
-package com.elnfach.realms.model
+package com.elnfach.realms.gen.characters.model
 
+import com.elnfach.realms.model.World
 import kotlin.random.Random
 
 data class Character(
@@ -19,7 +20,7 @@ data class Character(
 
     data class Trait(
         val value: String,
-        val direction: Boolean = Random.nextBoolean(),
+        val direction: Boolean = Random.Default.nextBoolean(),
         val intensity: Int = (3..10).random()
     )
 

@@ -1,5 +1,6 @@
 package com.elnfach.realms.gen.world.noice
 
+import android.util.Log
 import com.elnfach.realms.content.Altitude
 import com.elnfach.realms.gen.world.PerlinNoise
 import kotlin.math.abs
@@ -13,49 +14,65 @@ class HeightNoiseGen(val seed: Long) {
     private val terrainNoise = PerlinNoise(seed + 2)      // Базовый рельеф
     private val mountainNoise = PerlinNoise(seed + 3)     // Горные зоны
     private val ridgeNoise = PerlinNoise(seed + 4)        // Хребты
-    private val detailNoise = PerlinNoise(seed + 5)       // Детали
+    private val warpNoise = DomainWarpingNoiseGen(seed + 5, 10)
 
     fun gen(width: Int, height: Int): Array<DoubleArray> =
         Array(height) { y ->
             DoubleArray(width) { x ->
-                // БАЗОВЫЕ МАСКИ (все от -1 до 1)
-                val continent = continentNoise.fractalNoise(x * 0.005, y * 0.005, 2, 0.8)
-                val terrain = terrainNoise.fractalNoise(x * 0.1, y * 0.1, 4, 0.6)
-                val mountainZone = mountainNoise.fractalNoise(x * 0.05, y * 0.05, 3, 0.7)
+                val (warpedX, warpedY) = warpNoise.gen(x, y)
 
-                // МАСКА ОКЕАНОВ (глубокий океан -> мелководье)
-                val oceanMask = (-continent).coerceAtLeast(0.0) // continent < 0 -> океан
-                val deepOceanMask = (oceanMask - 0.5).coerceAtLeast(0.0) * 2.0 // глубокий океан
-                val shallowOceanMask = (oceanMask - 0.3).coerceIn(0.0, 0.2) * 5.0 // мелководье
+                val continent = continentNoise.fractalNoise(
+                    warpedX * 0.001,
+                    warpedY * 0.001,
+                    8, 0.7
+                )
+                val terrain = terrainNoise.fractalNoise(warpedX * 0.1, warpedY * 0.1, 4, 0.6) * 0.2
 
-                // МАСКА СУШИ (равнины -> холмы -> горы)
-                val landMask = continent.coerceAtLeast(0.0) // continent > 0 -> суша
-                val plainsMask = (landMask - 0.2).coerceIn(0.0, 0.3) * 3.3 // равнины
-                val hillsMask = (landMask - 0.5).coerceIn(0.0, 0.3) * 3.3 // холмы
-                val mountainBaseMask = (landMask - 0.8).coerceIn(0.0, 0.2) * 5.0 // предгорья
+                if (continent < 0) {
+                    // ОКЕАНЫ: -0.8 до 0.0
+                    val oceanDepth = (0.2 - continent)  // 0 до 1
+                    return@DoubleArray - 0.8 + oceanDepth * 0.8 // -0.8 до 0.0
+                }
 
-                // ГОРНЫЕ ДЕТАЛИ (только в горных зонах)
-                val ridgeValue = ridgeNoise.fractalNoise(x * 0.15, y * 0.15, 3)
-                val ridgeMask = (1 - abs(ridgeValue)).pow(2.0)
-                val mountainDetail = mountainNoise.fractalNoise(x * 0.8, y * 0.8, 5, 0.6)
-                val mountainsMask = (mountainZone - 0.3).coerceAtLeast(0.0) * ridgeMask
+                // СУША: плавные переходы через все уровни
+                var heightValue = when {
+                    continent < 0.1 -> {
+                        // COAST/BEACH: 0.0 до 0.03
+                        val progress = continent / 0.1 // 0 до 1
+                        progress * Altitude.BEACH_MAX // 0.0 до 0.03
+                    }
+                    continent < 0.4 -> {
+                        // PLAINS: 0.03 до 0.4
+                        val progress = (continent - 0.1) / 0.3 // 0 до 1
+                        Altitude.BEACH_MAX + progress * (Altitude.PLAINS_MAX - Altitude.BEACH_MAX) // 0.03 до 0.4
+                    }
+                    continent < 0.6 -> {
+                        // FOREST: 0.4 до 0.6
+                        val progress = (continent - 0.4) / 0.2 // 0 до 1
+                        Altitude.PLAINS_MAX + progress * (Altitude.FOREST_MAX - Altitude.PLAINS_MAX) // 0.4 до 0.6
+                    }
+                    continent < 0.8 -> {
+                        // HILLS: 0.6 до 0.7
+                        val progress = (continent - 0.6) / 0.2 // 0 до 1
+                        Altitude.FOREST_MAX + progress * (Altitude.HILLS_MAX - Altitude.FOREST_MAX) // 0.6 до 0.7
+                    }
+                    else -> {
+                        // MOUNTAINS: 0.7 до 0.9+
+                        val progress = (continent - 0.8) / 0.2 // 0 до 1
+                        Altitude.HILLS_MAX + progress * (0.9 - Altitude.HILLS_MAX) // 0.7 до 0.9
+                    }
+                }
 
-                // СБОРКА ВЫСОТЫ ЧЕРЕЗ МАСКИ
-                var heightValue = 0.0
+                // Добавляем шум (меньшей силы для сохранения переходов)
+                heightValue += terrain
 
-                // ОКЕАНЫ: от глубоких до мелких
-                heightValue += deepOceanMask * (-0.8 + terrain * 0.2)    // [-1.0, -0.6]
-                heightValue += shallowOceanMask * (-0.4 + terrain * 0.2) // [-0.4, -0.2]
+                // Для гор добавляем дополнительный шум
+                if (continent > 0.7) {
+                    val mountainDetail = mountainNoise.fractalNoise(warpedX * 0.3, warpedY * 0.3, 2, 0.5) * 0.15
+                    heightValue += mountainDetail
+                }
 
-                // СУША: от равнин к горам
-                heightValue += plainsMask * (0.1 + terrain * 0.3)        // [0.1, 0.4]
-                heightValue += hillsMask * (0.4 + terrain * 0.3)         // [0.4, 0.7]
-                heightValue += mountainBaseMask * (0.6 + terrain * 0.2)  // [0.6, 0.8]
-
-                // ВЕРШИНЫ ГОР (поверх всего)
-                heightValue += mountainsMask * mountainDetail * 0.5      // [0.0, +0.5]
-
-                heightValue.normalized
+                heightValue.coerceIn(-1.0, 1.0)
             }
         }
 }
