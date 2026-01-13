@@ -5,9 +5,5 @@ import com.elnfach.realms.gen.civilization.culture.model.Culture
 
 class CultureGen {
 
-    fun gen(biome: Biome): Culture {
-        return Culture(
 
-        )
-    }
 }

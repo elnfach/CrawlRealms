@@ -4,14 +4,21 @@ import android.content.Context
 import com.elnfach.realms.R
 import com.elnfach.realms.content.Biome
 import com.elnfach.realms.content.Traits
+import com.google.firebase.Firebase
+import com.google.firebase.storage.storage
+import kotlinx.coroutines.tasks.await
 import kotlinx.serialization.json.Json
 
 class ContentRepository(private val context: Context) {
 
-    fun getBiomes() : List<Biome> {
+    suspend fun getBiomes() : List<Biome> {
         return try {
-            val inputStream = context.resources.openRawResource(R.raw.biomes)
-            val jsonString = inputStream.bufferedReader().use { it.readText() }
+            val storage = Firebase.storage
+            val ref = storage.reference.child("crawl_realm/biomes.json") // путь в Storage
+
+            val bytes = ref.getBytes(Long.MAX_VALUE).await()
+            val jsonString = bytes.toString(Charsets.UTF_8)
+
             Json.decodeFromString<List<Biome>>(jsonString)
         } catch (e: Exception) {
             emptyList()

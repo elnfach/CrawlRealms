@@ -525,7 +525,7 @@ fun WorldMapVisualization(
     altitude: Boolean,
     toggle: Boolean,
     humidity: Boolean,
-    worldMap: Array<Array<WorldGen.Location>>,
+    worldMap: Array<Array<Location>>,
     modifier: Modifier = Modifier
 ) {
     val height = worldMap.size
@@ -550,7 +550,7 @@ fun WorldMapVisualization(
     }
 }
 @Composable
-fun BiomeLegend(worldMap: Array<Array<WorldGen.Location>>) {
+fun BiomeLegend(worldMap: Array<Array<Location>>) {
     val uniqueBiomes = remember(worldMap) {
         worldMap.flatMap { it.toList() }
             .map { it.biome }

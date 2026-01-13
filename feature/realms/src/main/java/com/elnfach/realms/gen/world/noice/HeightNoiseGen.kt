@@ -21,9 +21,12 @@ class HeightNoiseGen(val seed: Long) {
             DoubleArray(width) { x ->
                 val (warpedX, warpedY) = warpNoise.gen(x, y)
 
+                val nx = warpedX / width;
+                val ny = warpedY / height;
+
                 val continent = continentNoise.fractalNoise(
-                    warpedX * 0.001,
-                    warpedY * 0.001,
+                    nx,
+                    ny,
                     8, 0.7
                 )
                 val terrain = terrainNoise.fractalNoise(warpedX * 0.1, warpedY * 0.1, 4, 0.6) * 0.2
